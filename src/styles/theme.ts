@@ -1,8 +1,14 @@
 const theme = {
   colors: {
-    background: '#121214',
-    text: '#e1e1e6',
-    primary: '#8257e6'
+    background: '#F4F6F8',
+    title: '#1E266D',
+    text: '#455880',
+    primary: '#2251F8',
+    light: '#F9F9F9'
+  },
+  fonts: {
+    sansSerif: 'Poppins',
+    serif: 'Noto Serif'
   }
 }
 
