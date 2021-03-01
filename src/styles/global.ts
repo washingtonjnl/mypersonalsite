@@ -14,7 +14,7 @@ export default createGlobalStyle`
   }
 
   input, textarea, button {
-    font: 400 1rem ${props => props.theme.fonts.sansSerif}, sans-serif;
+    font-family: ${props => props.theme.fonts.sansSerif}, sans-serif;
   }
 
   button, a {
