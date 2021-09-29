@@ -15,12 +15,28 @@ export const Container = styled.div`
     z-index: 0;
     margin-bottom: -3rem;
   }
+
+  @media (max-width: 1024px) {
+    flex-direction: row;
+
+    img {
+      display: none;
+    }
+  }
 `;
 
 export const Content = styled.div`
   border: 0.0625rem solid ${({ theme }) => theme.colors.main.dark};
   border-top: 3.5rem solid ${({ theme }) => theme.colors.main.dark};
   border-radius: 0.5rem;
+
+  @media (max-width: 1024px) {
+    border-top: 0.0625rem solid ${({ theme }) => theme.colors.main.dark};
+  }
+
+  @media (max-width: 812px) {
+    width: 100%;
+  }
 
   padding: 1rem;
 

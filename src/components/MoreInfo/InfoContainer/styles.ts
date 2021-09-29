@@ -5,6 +5,19 @@ export const Container = styled.div`
   border: 0.0625rem solid ${({ theme }) => theme.colors.main.dark};
   border-radius: 0.5rem;
   overflow: hidden;
+  width: 100%;
+
+  @media (max-width: 736px) {
+    &:last-of-type {
+      margin-right: 2rem;
+    }
+  }
+
+  @media (max-width: 414px) {
+    &:last-of-type {
+      margin-right: 1.5rem;
+    }
+  }
 `;
 
 export const Title = styled.h3`
@@ -63,6 +76,12 @@ export const ProjectsContent = styled.div`
     line-height: 0.8125rem;
     color: ${({ theme }) => theme.colors.main.light};
   }
+
+  @media (max-width: 1024px) {
+    label {
+      line-height: 0.5rem;
+    }
+  }
 `;
 
 export const TopicsContent = styled.div`
@@ -84,5 +103,11 @@ export const TopicsContent = styled.div`
 
   svg {
     margin-right: 0.5rem;
+  }
+
+  @media (max-width: 1024px) {
+    svg {
+      margin-right: 1rem;
+    }
   }
 `;

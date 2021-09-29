@@ -8,6 +8,11 @@ export const Container = styled.div<ContainerProps>`
   padding-left: 1rem;
   border-left: 0.125rem solid ${({ theme }) => theme.colors.main.dark};
 
+  @media (max-width: 320px) {
+    border: none;
+    padding-left: 0;
+  }
+
   & + & {
     margin-top: 2rem;
   }

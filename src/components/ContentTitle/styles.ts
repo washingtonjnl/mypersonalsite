@@ -22,10 +22,25 @@ export const Container = styled.section<ContainerProps>`
   }
 
   p {
+    font-size: 1.125rem;
+
     ${({ withLink }) =>
       withLink &&
       css`
         margin-bottom: 1.5rem;
       `}
+  }
+
+  @media (max-width: 736px) {
+    h1 {
+      font-size: 2rem;
+    }
+  }
+
+  @media (max-width: 414px) {
+    h1 {
+      font-size: 1.9rem;
+      line-height: 2.7rem;
+    }
   }
 `;

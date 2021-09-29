@@ -4,7 +4,7 @@ import InfoContainer, {
   TopicsInfoData
 } from './InfoContainer';
 
-import { Container } from './styles';
+import { Container, ScrollContent } from './styles';
 
 const projects: ProjectInfoData[] = [
   {
@@ -20,7 +20,7 @@ const highlights: TopicsInfoData[] = [
   { icon: <FaCheck size="0.75rem" />, text: 'Mapeamento de jornadas' },
   { icon: <FaCheck size="0.75rem" />, text: 'Testes de usabilidade' },
   { icon: <FaCheck size="0.75rem" />, text: 'Métricas de experiência' },
-  { icon: <FaCheck size="0.75rem" />, text: 'Design System' }
+  { icon: <FaCheck size="0.75rem" />, text: 'Documentação e Design System' }
 ];
 const passions: TopicsInfoData[] = [
   { icon: <FaCode size="0.75rem" />, text: 'Programação' },
@@ -31,25 +31,27 @@ const passions: TopicsInfoData[] = [
 
 function MoreInfo() {
   return (
-    <Container>
-      <InfoContainer
-        type="projects"
-        title="Meu último projeto"
-        projects={projects}
-      />
+    <ScrollContent>
+      <Container>
+        <InfoContainer
+          type="projects"
+          title="Meu último projeto"
+          projects={projects}
+        />
 
-      <InfoContainer
-        type="topics"
-        title="Onde me destaco"
-        topics={highlights}
-      />
+        <InfoContainer
+          type="topics"
+          title="Onde me destaco"
+          topics={highlights}
+        />
 
-      <InfoContainer
-        type="topics"
-        title="Minhas outras paixões"
-        topics={passions}
-      />
-    </Container>
+        <InfoContainer
+          type="topics"
+          title="Minhas outras paixões"
+          topics={passions}
+        />
+      </Container>
+    </ScrollContent>
   );
 }
 

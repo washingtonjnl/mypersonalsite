@@ -20,4 +20,10 @@ export const Container = styled.div`
 
     margin-bottom: 1.5rem;
   }
+
+  @media (max-width: 414px) {
+    > h1 {
+      font-size: 1.4rem;
+    }
+  }
 `;

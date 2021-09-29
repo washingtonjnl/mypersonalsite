@@ -9,7 +9,12 @@ export default createGlobalStyle`
 
   html {
     font-size: 16px;
+
+    @media (max-width: 414px) {
+      font-size: 15px;
+    }
   }
+
 
   body {
     background: ${props => props.theme.colors.background};
