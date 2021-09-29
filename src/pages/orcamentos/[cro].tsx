@@ -20,7 +20,7 @@ import {
   Pricing,
   Footer,
   WarningPage
-} from '../../styles/pages/Invoice'
+} from './styles'
 
 import Logo from '../../assets/signature.svg'
 

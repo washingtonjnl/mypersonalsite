@@ -2,17 +2,17 @@ import { ReactNode } from 'react';
 
 import { Container } from './styles';
 
-interface FooterProps {
+interface MainInfoProps {
   children: ReactNode;
 }
 
-function Footer({ children }: FooterProps) {
+function MainInfo({ children }: MainInfoProps) {
   return (
     <Container>
-      <h1>Footer</h1>
+      <h1>MainInfo</h1>
       {children}
     </Container>
   );
 };
 
-export default Footer;
+export default MainInfo;

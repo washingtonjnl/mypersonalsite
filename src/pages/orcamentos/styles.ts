@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { transparentize } from 'polished'
 
 export const Container = styled.section`
-  border-top: 10px solid ${props => props.theme.colors.primary};
+  border-top: 10px solid ${props => props.theme.colors.main.dark};
 `
 
 export const Main = styled.main`
@@ -22,7 +22,7 @@ export const Header = styled.header`
 
   > svg {
     path {
-      fill: ${props => props.theme.colors.primary};
+      fill: ${props => props.theme.colors.main.dark};
     }
   }
 
@@ -33,7 +33,7 @@ export const Header = styled.header`
 
 export const Contact = styled.div`
   h1 {
-    color: ${props => props.theme.colors.primary};
+    color: ${props => props.theme.colors.main.dark};
     margin-bottom: 15px;
   }
 
@@ -50,7 +50,7 @@ export const Contact = styled.div`
 
     svg {
       margin-right: 8px;
-      color: ${props => props.theme.colors.primary};
+      color: ${props => props.theme.colors.main.dark};
     }
   }
 `
@@ -59,7 +59,7 @@ export const InvoicePresentation = styled.section`
   margin: 65px 0 45px 0;
 
   h1 {
-    color: ${props => props.theme.colors.primary};
+    color: ${props => props.theme.colors.main.dark};
     font-size: 36px;
     margin-bottom: 14px;
 
@@ -78,15 +78,15 @@ export const InvoicePresentation = styled.section`
     background: none;
     border-radius: 5px;
 
-    color: ${props => props.theme.colors.primary};
+    color: ${props => props.theme.colors.main.dark};
 
     &:hover {
-      background: ${props => transparentize(0.8, props.theme.colors.primary)};
+      background: ${props => transparentize(0.8, props.theme.colors.main.dark)};
     }
   }
 
   h2 {
-    color: ${props => props.theme.colors.text};
+    color: ${props => props.theme.colors.main.default};
     font-size: 18px;
     font-weight: 400;
   }
@@ -130,14 +130,14 @@ export const ProjectInfo = styled.section`
 
 export const Separator = styled.div`
   height: 1px;
-  background: ${props => props.theme.colors.text};
+  background: ${props => props.theme.colors.main.default};
 `
 
 export const Services = styled.section`
   margin: 45px 0;
 
   h3 {
-    color: ${props => props.theme.colors.primary};
+    color: ${props => props.theme.colors.main.dark};
     font-size: 24px;
     margin-bottom: 25px;
     margin-left: 8px;
@@ -148,7 +148,8 @@ export const ServicesTable = styled.table`
   width: 100%;
 
   tr:nth-child(even) {
-    background: ${props => transparentize(0.95, props.theme.colors.text)};
+    background: ${props =>
+      transparentize(0.95, props.theme.colors.main.default)};
   }
 
   td {
@@ -168,7 +169,7 @@ export const Details = styled.section`
 
 export const Obs = styled.p`
   width: 50%;
-  color: ${props => props.theme.colors.text};
+  color: ${props => props.theme.colors.main.default};
   line-height: 24px;
 
   opacity: 0.7;
@@ -194,13 +195,13 @@ export const Pricing = styled.div`
   }
 
   strong {
-    color: ${props => props.theme.colors.primary};
+    color: ${props => props.theme.colors.main.dark};
     font-weight: normal;
   }
 
   div:last-child {
     margin-top: 30px;
-    color: ${props => props.theme.colors.primary};
+    color: ${props => props.theme.colors.main.dark};
 
     p {
       font-weight: bold;
@@ -226,12 +227,12 @@ export const Footer = styled.footer`
 
   svg {
     margin-bottom: 15px;
-    fill: ${props => props.theme.colors.text};
+    fill: ${props => props.theme.colors.main.default};
   }
 
   p {
     font-size: 14px;
-    color: ${props => props.theme.colors.text};
+    color: ${props => props.theme.colors.main.default};
   }
 `
 
@@ -248,7 +249,7 @@ export const WarningPage = styled.main`
   }
 
   h1 {
-    color: ${props => props.theme.colors.primary};
+    color: ${props => props.theme.colors.main.dark};
     margin: 20px 0 10px 0;
   }
 

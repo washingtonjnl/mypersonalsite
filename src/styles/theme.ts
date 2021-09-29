@@ -1,10 +1,12 @@
 const theme = {
   colors: {
-    background: '#F4F6F8',
-    title: '#1E266D',
-    text: '#455880',
-    primary: '#2251F8',
-    light: '#F9F9F9'
+    background: '#F7F9FC',
+    inverse: '#FFFFFF',
+    main: {
+      dark: '#434C99',
+      default: '#455880',
+      light: '#7A88A5'
+    }
   },
   fonts: {
     sansSerif: 'Poppins',

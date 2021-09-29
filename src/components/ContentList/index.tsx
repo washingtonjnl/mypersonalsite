@@ -2,17 +2,17 @@ import { ReactNode } from 'react';
 
 import { Container } from './styles';
 
-interface FooterProps {
+interface ContentListProps {
   children: ReactNode;
 }
 
-function Footer({ children }: FooterProps) {
+function ContentList({ children }: ContentListProps) {
   return (
     <Container>
-      <h1>Footer</h1>
+      <h1>ContentList</h1>
       {children}
     </Container>
   );
 };
 
-export default Footer;
+export default ContentList;
