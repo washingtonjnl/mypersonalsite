@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
   * {
@@ -7,10 +7,15 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
+  html {
+    font-size: 16px;
+  }
+
   body {
     background: ${props => props.theme.colors.background};
     color: ${props => props.theme.colors.main.default};
-    font: 400 16px ${props => props.theme.fonts.sansSerif}, sans-serif;
+    font-family: ${props => props.theme.fonts.sansSerif}, sans-serif;
+    font-weight: 300;
   }
 
   input, textarea, button {
@@ -20,4 +25,4 @@ export default createGlobalStyle`
   button, a {
     cursor: pointer;
   }
-`
+`;

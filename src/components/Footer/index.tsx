@@ -1,18 +1,19 @@
-import { ReactNode } from 'react';
-
 import { Container } from './styles';
 
-interface FooterProps {
-  children: ReactNode;
-}
-
-function Footer({ children }: FooterProps) {
+function Footer() {
   return (
     <Container>
-      <h1>Footer</h1>
-      {children}
+      <small>
+        Desenvolvido com 💙 por mim. Veja o repositório do projeto no{' '}
+        <a
+          target="_blank"
+          href="https://github.com/washingtonjnl/mypersonalsite"
+        >
+          GitHub.
+        </a>
+      </small>
     </Container>
   );
-};
+}
 
 export default Footer;

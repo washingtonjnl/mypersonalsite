@@ -1,5 +1,31 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const Container = styled.div`
+interface ContainerProps {
+  withLink: boolean;
+}
 
+export const Container = styled.section<ContainerProps>`
+  h1 {
+    font-size: 2.5rem;
+    line-height: 3.25rem;
+    font-weight: 700;
+
+    font-family: ${({ theme }) => theme.fonts.serif};
+
+    color: ${({ theme }) => theme.colors.main.dark};
+
+    span {
+      font-family: ${({ theme }) => theme.fonts.sansSerif};
+    }
+
+    margin-bottom: 1rem;
+  }
+
+  p {
+    ${({ withLink }) =>
+      withLink &&
+      css`
+        margin-bottom: 1.5rem;
+      `}
+  }
 `;
