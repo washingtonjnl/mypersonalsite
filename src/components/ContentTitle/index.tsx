@@ -13,7 +13,7 @@ function ContentTitle({ children, link }: ContentTitleProps) {
   return (
     <Container withLink={!!link}>
       {children}
-      <IconLink text={link.text} type={link.type} href={link.href} />
+      {link && <IconLink text={link.text} type={link.type} href={link.href} />}
     </Container>
   );
 }

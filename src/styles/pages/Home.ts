@@ -26,20 +26,17 @@ export const Container = styled.main`
 export const Profile = styled.aside`
   display: flex;
   flex-direction: column;
-  margin-right: 2.5rem;
+  margin-right: 3rem;
 
   > div {
-    position: fixed;
+    position: sticky;
+    top: 3rem;
     display: grid;
     gap: 1rem;
   }
 
   @media (max-width: 1650px) {
-    > div {
-      position: relative;
-      display: grid;
-      gap: 1rem;
-    }
+    margin-right: 2.5rem;
   }
 
   @media (max-width: 1024px) {

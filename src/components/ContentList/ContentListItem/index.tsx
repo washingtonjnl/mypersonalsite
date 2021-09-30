@@ -35,8 +35,8 @@ function ContentListItem({
       <small>{periodString}</small>
       <h1>{title}</h1>
       <h2>{caption}</h2>
-      {description.split('\n').map(lineBlock => (
-        <p>{lineBlock}</p>
+      {description.split('\n').map((lineBlock, key) => (
+        <p key={key}>{lineBlock}</p>
       ))}
       {link && <IconLink text={link.text} type={link.type} href={link.href} />}
     </Container>

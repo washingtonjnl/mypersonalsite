@@ -22,7 +22,15 @@ export const Container = styled.section<ContainerProps>`
   }
 
   p {
-    font-size: 1.125rem;
+    font-size: 1rem;
+
+    strong {
+      font-weight: 600;
+    }
+
+    & + p {
+      margin-top: 1rem;
+    }
 
     ${({ withLink }) =>
       withLink &&
@@ -39,7 +47,7 @@ export const Container = styled.section<ContainerProps>`
 
   @media (max-width: 414px) {
     h1 {
-      font-size: 1.9rem;
+      font-size: 1.7rem;
       line-height: 2.7rem;
     }
   }
