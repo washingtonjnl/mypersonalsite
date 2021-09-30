@@ -1,9 +1,9 @@
-import styled from 'styled-components'
-import { transparentize } from 'polished'
+import styled from 'styled-components';
+import { transparentize } from 'polished';
 
 export const Container = styled.section`
   border-top: 10px solid ${props => props.theme.colors.main.dark};
-`
+`;
 
 export const Main = styled.main`
   max-width: 1440px;
@@ -13,7 +13,7 @@ export const Main = styled.main`
   @media (max-width: 600px) {
     padding: 20px;
   }
-`
+`;
 
 export const Header = styled.header`
   display: flex;
@@ -29,7 +29,7 @@ export const Header = styled.header`
   @media (max-width: 600px) {
     flex-direction: row-reverse;
   }
-`
+`;
 
 export const Contact = styled.div`
   h1 {
@@ -53,7 +53,7 @@ export const Contact = styled.div`
       color: ${props => props.theme.colors.main.dark};
     }
   }
-`
+`;
 
 export const InvoicePresentation = styled.section`
   margin: 65px 0 45px 0;
@@ -103,7 +103,7 @@ export const InvoicePresentation = styled.section`
       line-height: 1.4em;
     }
   }
-`
+`;
 
 export const ProjectInfo = styled.section`
   margin: 45px 0;
@@ -126,12 +126,12 @@ export const ProjectInfo = styled.section`
       margin-top: 10px;
     }
   }
-`
+`;
 
 export const Separator = styled.div`
   height: 1px;
   background: ${props => props.theme.colors.main.default};
-`
+`;
 
 export const Services = styled.section`
   margin: 45px 0;
@@ -142,7 +142,7 @@ export const Services = styled.section`
     margin-bottom: 25px;
     margin-left: 8px;
   }
-`
+`;
 
 export const ServicesTable = styled.table`
   width: 100%;
@@ -155,7 +155,7 @@ export const ServicesTable = styled.table`
   td {
     padding: 8px;
   }
-`
+`;
 
 export const Details = styled.section`
   display: flex;
@@ -165,7 +165,7 @@ export const Details = styled.section`
   @media (max-width: 600px) {
     flex-direction: column;
   }
-`
+`;
 
 export const Obs = styled.p`
   width: 50%;
@@ -178,7 +178,7 @@ export const Obs = styled.p`
     width: 100%;
     margin-bottom: 30px;
   }
-`
+`;
 
 export const Pricing = styled.div`
   width: 25%;
@@ -216,7 +216,7 @@ export const Pricing = styled.div`
       margin-top: 20px;
     }
   }
-`
+`;
 
 export const Footer = styled.footer`
   display: flex;
@@ -225,8 +225,9 @@ export const Footer = styled.footer`
 
   opacity: 0.4;
 
-  svg {
-    margin-bottom: 15px;
+  img {
+    width: 48px;
+    margin-bottom: 16px;
     fill: ${props => props.theme.colors.main.default};
   }
 
@@ -234,7 +235,7 @@ export const Footer = styled.footer`
     font-size: 14px;
     color: ${props => props.theme.colors.main.default};
   }
-`
+`;
 
 export const WarningPage = styled.main`
   min-height: 100vh;
@@ -256,4 +257,8 @@ export const WarningPage = styled.main`
   p {
     font-size: 18px;
   }
-`
+`;
+
+export const Logo = styled.img`
+  width: 80px;
+`;

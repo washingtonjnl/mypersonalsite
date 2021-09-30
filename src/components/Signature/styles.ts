@@ -8,7 +8,7 @@ export const Container = styled.div`
 
   color: ${({ theme }) => theme.colors.main.dark};
 
-  svg {
+  img {
     margin-right: 1rem;
   }
 

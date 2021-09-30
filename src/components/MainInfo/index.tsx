@@ -2,12 +2,10 @@ import { FaGithub, FaInbox, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa';
 
 import { Container, Content, SocialList } from './styles';
 
-import myPhoto from '../../assets/me.jpeg';
-
 function MainInfo() {
   return (
     <Container>
-      <img src={myPhoto} alt="Washington Junior" />
+      <img src="me.jpeg" alt="Washington Junior" />
       <Content>
         <h1>Washington Junior</h1>
         <h2>Product Designer</h2>

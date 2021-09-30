@@ -12,6 +12,6 @@ const theme = {
     sansSerif: 'Poppins',
     serif: 'Noto Serif'
   }
-}
+};
 
-export default theme
+export default theme;

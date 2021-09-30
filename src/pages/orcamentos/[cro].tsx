@@ -1,8 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
-import Image from 'next/image';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { FiDownload, FiMail, FiMapPin, FiPhoneCall } from 'react-icons/fi';
+import { FiMail, FiMapPin, FiPhoneCall } from 'react-icons/fi';
 import { format, parseISO } from 'date-fns';
 
 import {
@@ -19,12 +18,11 @@ import {
   Obs,
   Pricing,
   Footer,
-  WarningPage
+  WarningPage,
+  Logo
 } from '../../styles/pages/Invoices';
 
-import Logo from '../../assets/signature.svg';
-
-type Invoice = {
+type InvoiceData = {
   _id: string;
   project: string;
   description: string;
@@ -51,7 +49,7 @@ type Invoice = {
 };
 
 type Params = {
-  invoice: Invoice | null;
+  invoice: InvoiceData | null;
 };
 
 export default function Invoice({ invoice }: Params) {
@@ -60,7 +58,6 @@ export default function Invoice({ invoice }: Params) {
   if (isFallback) {
     return (
       <WarningPage>
-        <Image src="/assets/guy-2.svg" width="" height="" />
         <h1>Carregando Seu Orçamento</h1>
         <p>Por favor, aguarde alguns instantes...</p>
       </WarningPage>
@@ -70,7 +67,6 @@ export default function Invoice({ invoice }: Params) {
   if (!invoice) {
     return (
       <WarningPage>
-        <Image src="/assets/guy-3.svg" width="" height="" />
         <h1>Orçamento não encontrado</h1>
         <p>Por favor, entre em contato comigo. Vou resolver isso pra você 😉</p>
       </WarningPage>
@@ -89,7 +85,7 @@ export default function Invoice({ invoice }: Params) {
     return parsedPrice;
   }
 
-  function downloadInvoice() {}
+  // function downloadInvoice() {}
 
   return (
     <>
@@ -117,7 +113,7 @@ export default function Invoice({ invoice }: Params) {
                 </span>
               </p>
             </Contact>
-            <Logo />
+            <Logo src="/signature.svg" alt="Assinatura do Washington Junior" />
           </Header>
 
           <InvoicePresentation>
@@ -184,7 +180,7 @@ export default function Invoice({ invoice }: Params) {
           </Details>
 
           <Footer>
-            <Logo />
+            <Logo src="/signature.svg" alt="Assinatura do Washington Junior" />
             <p>CRO: {invoice._id}</p>
           </Footer>
         </Main>
@@ -197,10 +193,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const response = await fetch(
     'https://my-invoice-generator.herokuapp.com/invoices'
   );
-  const data: Invoice[] = await response.json();
+  const data: InvoiceData[] = await response.json();
 
   const invoices = data.map(invoice => {
-    return { params: { cro: invoice['_id'] } };
+    return { params: { cro: invoice._id } };
   });
 
   return {
@@ -214,11 +210,11 @@ export const getStaticProps: GetStaticProps = async context => {
   const response = await fetch(
     `https://my-invoice-generator.herokuapp.com/invoices?cro=${cro}`
   );
-  const data: Invoice = await response.json();
+  const data: InvoiceData = await response.json();
 
   return {
     props: {
-      invoice: data ? data : null
+      invoice: data || null
     },
     revalidate: 60
   };

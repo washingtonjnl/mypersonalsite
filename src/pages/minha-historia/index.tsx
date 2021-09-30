@@ -11,11 +11,6 @@ import {
   StyledBreadcrumbs
 } from '../../styles/pages/MyHistory';
 
-import historyOneG from '../../assets/history-one-g.png';
-import historyOneP from '../../assets/history-one-p.png';
-import historyTwoG from '../../assets/history-two-g.png';
-import historyTwoP from '../../assets/history-two-p.png';
-
 function MyHistory() {
   return (
     <>
@@ -48,8 +43,8 @@ function MyHistory() {
           </p>
         </ContentTitle>
         <ResponsiveImage
-          desktopSrc={historyOneG}
-          mobileSrc={historyOneP}
+          desktopSrc="history-one-g.png"
+          mobileSrc="history-one-p.png"
           alt="Design para web e interfaces aplicadas"
         />
         <Paragraph>
@@ -76,8 +71,8 @@ function MyHistory() {
           </strong>
         </Paragraph>
         <ResponsiveImage
-          desktopSrc={historyTwoG}
-          mobileSrc={historyTwoP}
+          desktopSrc="history-two-g.png"
+          mobileSrc="history-two-p.png"
           alt="Artefatos de pesquisa e mapeamento de experiências dos usuários"
         />
         <Paragraph>
