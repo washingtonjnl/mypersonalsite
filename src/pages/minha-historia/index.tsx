@@ -5,7 +5,11 @@ import ResponsiveImage from '../../components/ResponsiveImage';
 import Signature from '../../components/Signature';
 import Footer from '../../components/Footer';
 
-import { Container, Paragraph, StyledBreadcrumbs } from './styles';
+import {
+  Container,
+  Paragraph,
+  StyledBreadcrumbs
+} from '../../styles/pages/MyHistory';
 
 import historyOneG from '../../assets/history-one-g.png';
 import historyOneP from '../../assets/history-one-p.png';

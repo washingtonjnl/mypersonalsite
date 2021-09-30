@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 
 import { FaCheck, FaChevronRight } from 'react-icons/fa';
-import { IconLinkProps } from '../../../IconLink';
+import { IconLinkProps } from '../../IconLink';
 
 import { Container, Title, ProjectsContent, TopicsContent } from './styles';
 

@@ -1,9 +1,9 @@
-import { GetStaticPaths, GetStaticProps } from 'next'
-import Image from 'next/image'
-import Head from 'next/head'
-import { useRouter } from 'next/router'
-import { FiDownload, FiMail, FiMapPin, FiPhoneCall } from 'react-icons/fi'
-import { format, parseISO } from 'date-fns'
+import { GetStaticPaths, GetStaticProps } from 'next';
+import Image from 'next/image';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
+import { FiDownload, FiMail, FiMapPin, FiPhoneCall } from 'react-icons/fi';
+import { format, parseISO } from 'date-fns';
 
 import {
   Container,
@@ -20,42 +20,42 @@ import {
   Pricing,
   Footer,
   WarningPage
-} from './styles'
+} from '../../styles/pages/Invoices';
 
-import Logo from '../../assets/signature.svg'
+import Logo from '../../assets/signature.svg';
 
 type Invoice = {
-  _id: string
-  project: string
-  description: string
-  recipient: string
-  startDate: string
-  dueDate: string
-  note?: string
+  _id: string;
+  project: string;
+  description: string;
+  recipient: string;
+  startDate: string;
+  dueDate: string;
+  note?: string;
 
   services: Array<{
-    _id: string
-    description: string
-    price: number
-  }>
+    _id: string;
+    description: string;
+    price: number;
+  }>;
 
-  price: number
-  priceAdjusts: number
+  price: number;
+  priceAdjusts: number;
 
   paymentInfo: {
-    allowedMethods: Array<'full' | 'half' | 'installment'>
-    interestFree: boolean
-  }
-  createdAt: string
-  updatedAt: string
-}
+    allowedMethods: Array<'full' | 'half' | 'installment'>;
+    interestFree: boolean;
+  };
+  createdAt: string;
+  updatedAt: string;
+};
 
 type Params = {
-  invoice: Invoice | null
-}
+  invoice: Invoice | null;
+};
 
 export default function Invoice({ invoice }: Params) {
-  const { isFallback } = useRouter()
+  const { isFallback } = useRouter();
 
   if (isFallback) {
     return (
@@ -64,7 +64,7 @@ export default function Invoice({ invoice }: Params) {
         <h1>Carregando Seu Orçamento</h1>
         <p>Por favor, aguarde alguns instantes...</p>
       </WarningPage>
-    )
+    );
   }
 
   if (!invoice) {
@@ -74,19 +74,19 @@ export default function Invoice({ invoice }: Params) {
         <h1>Orçamento não encontrado</h1>
         <p>Por favor, entre em contato comigo. Vou resolver isso pra você 😉</p>
       </WarningPage>
-    )
+    );
   }
 
   function parseDate(date: string) {
-    return format(parseISO(date), 'dd/MM/yyyy')
+    return format(parseISO(date), 'dd/MM/yyyy');
   }
 
   function parsePrice(price: number) {
     const parsedPrice = price.toLocaleString(['pt'], {
       style: 'currency',
       currency: 'BRL'
-    })
-    return parsedPrice
+    });
+    return parsedPrice;
   }
 
   function downloadInvoice() {}
@@ -190,36 +190,36 @@ export default function Invoice({ invoice }: Params) {
         </Main>
       </Container>
     </>
-  )
+  );
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const response = await fetch(
     'https://my-invoice-generator.herokuapp.com/invoices'
-  )
-  const data: Invoice[] = await response.json()
+  );
+  const data: Invoice[] = await response.json();
 
   const invoices = data.map(invoice => {
-    return { params: { cro: invoice['_id'] } }
-  })
+    return { params: { cro: invoice['_id'] } };
+  });
 
   return {
     paths: invoices,
     fallback: true
-  }
-}
+  };
+};
 
 export const getStaticProps: GetStaticProps = async context => {
-  const { cro } = context.params!
+  const { cro } = context.params!;
   const response = await fetch(
     `https://my-invoice-generator.herokuapp.com/invoices?cro=${cro}`
-  )
-  const data: Invoice = await response.json()
+  );
+  const data: Invoice = await response.json();
 
   return {
     props: {
       invoice: data ? data : null
     },
     revalidate: 60
-  }
-}
+  };
+};
