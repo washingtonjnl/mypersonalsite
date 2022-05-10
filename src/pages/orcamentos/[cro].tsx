@@ -135,6 +135,10 @@ export default function Invoice({ invoice }: Params) {
               <p>{invoice.project}</p>
             </div>
             <div>
+              <strong>Início</strong>
+              <p>{parseDate(invoice.startDate)}</p>
+            </div>
+            <div>
               <strong>Prazo</strong>
               <p>{parseDate(invoice.dueDate)}</p>
             </div>
@@ -160,7 +164,9 @@ export default function Invoice({ invoice }: Params) {
           <Details>
             {invoice.note && (
               <Obs>
-                <strong>Observações:</strong> {invoice.note}
+                <strong>Observações:</strong>
+                <br />
+                {invoice.note}
               </Obs>
             )}
             <Pricing>
