@@ -166,6 +166,7 @@ export default function Invoice({ invoice }: Params) {
               <Obs>
                 <strong>Observações:</strong>
                 <br />
+                <br />
                 {invoice.note}
               </Obs>
             )}
