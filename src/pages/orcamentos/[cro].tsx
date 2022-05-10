@@ -118,7 +118,7 @@ export default function Invoice({ invoice }: Params) {
 
           <InvoicePresentation>
             <h1>
-              Orçamento {invoice.project}
+              Orçamento para {invoice.project}
               {/* <button onClick={downloadInvoice}>
                 <FiDownload size={24} />
               </button> */}
